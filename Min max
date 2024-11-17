@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int i, j, n, t, a[100];
+
+cout << "\nEnter the number of elements: ";
+
+cin >> n;
+
+cout << "\nEnter the numbers:\n";
+
+for (i = 0; i < n; i++) {
+
+cin >> a[i];
+
+}
+
+for (i = 0; i < n; i++) {
+
+for (j = i + 1; j < n; j++) {
+
+if (a[i] < a[j]) {
+
+t = a[i];
+
+a[i] = a[j];
+
+a[j] = t;
+
+}
+}
+
+}
+
+cout << "\nThe maximum number is: " << a[0];
+
+cout << "\nThe minimum number is: " << a[n - 1];
+
+return 0;
+
+}
