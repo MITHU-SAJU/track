@@ -1,0 +1,79 @@
+#include<iostream>
+
+using namespace std;
+
+class code {
+
+int id;
+
+public:
+
+// Default constructor
+
+code() {
+
+id = 0; // Initialize id with 0
+
+}
+
+// Parameterized constructor
+
+code(int a) {
+
+id = a;
+
+}
+
+// Copy constructor
+
+code(const code &x) {
+
+id = x.id;
+
+}
+
+// Display function
+
+void display() {
+
+cout << id << endl;
+
+}
+
+};
+
+int main() {
+
+// Creating objects
+
+code A(100); // Parameterized constructor
+
+code B(A); // Copy constructor
+
+code C = A; // Copy constructor (same as above)
+
+code D; // Default constructor
+
+D = A; // Assignment operator
+
+// Display the IDs
+
+cout << "\nID of A: ";
+
+A.display();
+
+cout << "\nID of B: ";
+
+B.display();
+
+cout << "\nID of C: ";
+
+C.display();
+
+cout << "\nID of D: ";
+
+D.display();
+
+return 0;
+
+}
