@@ -1,0 +1,99 @@
+#include <iostream>
+
+using namespace std;
+
+class Time {
+
+public:
+
+int hrs, min;
+
+public:
+
+// Function to input time
+
+void gettime() {
+
+cout << "\nEnter the hours: ";
+
+cin >> hrs;
+
+cout << "Enter the minutes: ";
+
+cin >> min;
+
+}
+
+// Function to display time
+
+void puttime() {
+
+cout << hrs << " hrs " << min << " minutes" << endl;
+
+}
+
+// Function to add two times
+
+void sum(Time t1, Time t2)
+
+{
+
+min = t1.min + t2.min;
+
+hrs = min / 60; // Convert minutes to hours if needed
+
+min = min % 60; // Get remaining minutes
+
+hrs += t1.hrs + t2.hrs;
+
+// Add hours
+
+}
+
+};
+
+int main() {
+
+Time t1, t2, t3;
+
+// Input two times
+
+t1.gettime();
+
+t2.gettime();
+
+// Sum the two times and store the result in t3
+
+t3.sum(t1,t2);
+
+// Display the times
+
+cout << "\nTime 1: ";
+
+t1.puttime();
+
+cout << "\nTime 2: ";
+
+t2.puttime();
+
+if(t1.min>60 || t2.min>60)
+
+{
+
+cout<<"\nInvalid input";
+
+}
+
+else
+
+{
+
+cout << "\nSum of Time 1 and Time 2: ";
+
+t3.puttime();
+
+}
+
+return 0;
+
+}
