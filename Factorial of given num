@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+class Factorial {
+
+public:
+
+long f; // Declare a public long variable `f` to store the factorial result.
+
+// Constructor to initialize the factorial with a given value.
+
+Factorial(int k) {
+
+f = k; // Initialize `f` with the value passed (in this case, 1).
+
+}
+
+// Destructor, which will be called automatically when the object is
+
+destroyed.
+
+~Factorial() {
+
+cout << "\nThe constructor destroyed\n"; // This message is printed
+
+when the object is destructed.
+
+}
+
+// Function to calculate factorial of a number `n`.
+
+void calculateFactorial(int n) {
+
+for (int i = 1; i <= n; i++) {
+
+f *= i; // Multiply `f` by `i` in each iteration to calculate the factorial.
+
+}
+
+cout << "\nThe factorial value is: " << f << endl; // Output the
+
+calculated factorial value.
+
+}
+
+};
+
+int main() {
+
+int n; // Declare an integer `n` to store the user's input number.
+
+long f = 1; // Initialize the factorial variable `f` to 1 (as factorials start from
+
+1).
+
+// Create a `Factorial` object with the initial value of `f`.
+
+Factorial f1(f);
+
+// Input the number for which the factorial needs to be calculated.
+
+cout << "Enter the N value: ";
+
+cin >> n;
+
+// Call the `calculateFactorial` function of the `Factorial` object `f1` to
+
+compute the factorial.
+
+f1.calculateFactorial(n);
+
+return 0;
+
+}
