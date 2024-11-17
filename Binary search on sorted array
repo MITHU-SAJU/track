@@ -1,0 +1,132 @@
+#include<iostream>
+
+using namespace std;
+
+class BinarySearch {
+
+private:
+
+int a[20], i, t, j, s, n;
+
+public:
+
+// Function to input data
+
+void data() {
+
+cout << "\nEnter the number of elements: ";
+
+cin >> n;
+
+cout << "\nEnter the elements: ";
+
+for (i = 0; i < n; i++) {
+
+cin >> a[i];
+
+}
+
+}
+
+// Function to sort the array in ascending order
+
+void asc() {
+
+cout << "\nSorted elements are: ";
+
+for (i = 0; i < n; i++) {
+
+for (j = i + 1; j < n; j++) {
+
+if (a[i] > a[j]) {
+
+t = a[i];
+
+a[i] = a[j];
+a[j] = t;
+
+}
+
+}
+
+}
+
+}
+
+// Function to display the sorted array
+
+void display() {
+
+for (i = 0; i < n; i++) {
+
+cout << a[i] << " ";
+
+}
+
+cout << endl;
+
+}
+
+// Function to perform binary search
+
+void search() {
+
+cout << "\nEnter the search element: ";
+
+cin >> s;
+
+int m, l = 0, u = n - 1, got = 0;
+
+while (l <= u) {
+
+m = (l + u) / 2;
+
+if (s == a[m]) {
+
+cout << "\nThe search element " << s << " is at position: " << m + 1;
+
+got = 1;
+break;
+
+}
+
+else if (s < a[m]) {
+
+u = m - 1;
+
+}
+
+else {
+
+l = m + 1;
+
+}
+
+}
+
+if (got != 1) {
+
+cout << "\nThe search element was not found.";
+
+}
+
+}
+
+};
+
+int main() {
+
+BinarySearch p1;
+
+p1.data(); // Get the data
+
+p1.asc(); // Sort the array
+
+p1.display(); // Display the sorted array
+
+p1.search(); // Perform binary search
+
+return 0;
+
+}
+
