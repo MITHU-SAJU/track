@@ -1,0 +1,79 @@
+#include <iostream>
+
+#include <cstring>
+
+using namespace std;
+
+class Sort {
+
+public:
+
+char s[100]; //A character array (C-string) to store a string of up to 100
+
+characters.
+
+// Function to input a string
+
+void getstring() {
+
+cout << "\nEnter the String: ";
+
+cin >> s;
+
+}555
+
+};
+
+int main() {
+
+int n;
+
+char temp[100];
+// Ask user for the number of strings
+
+cout << "Enter the total number of strings: ";
+
+cin >> n;
+
+Sort a[100]; // Array of objects
+
+// Get strings from the user
+
+for (int i = 0; i < n; i++) {
+
+a[i].getstring();
+
+}
+
+// Sort the strings using bubble sort
+
+for (int i = 0; i < n; i++) {
+
+for (int j = i + 1; j < n; j++) {
+
+if (strcmp(a[i].s, a[j].s) > 0) { // Compare two strings.
+
+strcpy(temp, a[i].s); // Copy one string to another.
+
+strcpy(a[i].s, a[j].s);
+
+strcpy(a[j].s, temp);
+
+}
+
+}
+
+}
+// Display the sorted strings
+
+cout << "\nThe sorted strings are: \n";
+
+for (int i = 0; i < n; i++) {
+
+cout << a[i].s << endl;
+
+}
+
+return 0;
+
+}
